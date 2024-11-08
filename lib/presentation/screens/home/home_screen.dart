@@ -107,12 +107,7 @@ class _HomeScreenState extends BaseState<HomeScreen, HomeViewModel>
               ],
             ),
           ),
-          floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.add),
-            onPressed: () {
-              Navigator.pushNamed(context, AddRoomScreen.routeName);
-            },
-          ),
+          
         ),
       ]),
     );
