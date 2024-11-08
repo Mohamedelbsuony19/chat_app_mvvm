@@ -11,7 +11,7 @@ class RegisterViewModel extends BaseViewModel<RegisterNavigator> {
       String lastName, String userName) async {
     try {
       navigator?.showLoading();
-      var res = await firebaseAuth.createUserWithEmailAndPassword(
+      var  res = await firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -21,7 +21,7 @@ class RegisterViewModel extends BaseViewModel<RegisterNavigator> {
           lName: lastName,
           userName: userName,
           email: email);
-       await DatabaseUtils.createDatabase(user);
+      await DatabaseUtils.createDatabase(user);
       navigator?.goHome(user);
       return;
     } on FirebaseAuthException catch (e) {
